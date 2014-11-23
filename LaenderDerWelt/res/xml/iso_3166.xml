@@ -50,6 +50,12 @@ Source: <http://www.iso.org/iso/country_codes>
 
 <iso_3166_entries>
 	<iso_3166_entry
+		alpha_2_code="CH"
+		alpha_3_code="CHE"
+		numeric_code="756"
+		name="Switzerland"
+		official_name="Swiss Confederation" />
+	<iso_3166_entry
 		alpha_2_code="AF"
 		alpha_3_code="AFG"
 		numeric_code="004"

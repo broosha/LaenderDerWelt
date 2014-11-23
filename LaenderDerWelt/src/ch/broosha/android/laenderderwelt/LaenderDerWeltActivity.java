@@ -14,15 +14,14 @@ import android.content.res.XmlResourceParser;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
-import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.Spinner;
-import ch.broosha.android.laenderderwelt.R;
 
-public class LaenderDerWeltActivity extends ListActivity implements OnClickListener {
+public class LaenderDerWeltActivity extends ListActivity implements OnItemSelectedListener {
 	
-	private Button buttonGo;
+//	private Button buttonGo;
 	private Spinner spinnerCountryName;
 	private CountriesAdapter countriesAdapter;
 	
@@ -40,14 +39,11 @@ public class LaenderDerWeltActivity extends ListActivity implements OnClickListe
 		countriesAdapter = new CountriesAdapter(this, new ArrayList<Country>());
 		setListAdapter(countriesAdapter);
 		
-		// Elemente der Eingabe rauslesen:
-		buttonGo = (Button) input.findViewById(R.id.buttonGo);
-		
 		//Dynamically generate a spinner data:
         createCountriesSpinnerDropDown(input);
 		
-		// buttonGo angeklickt:
-		buttonGo.setOnClickListener(this);
+		// spinnerCountryName: Land ausgesucht
+		spinnerCountryName. setOnItemSelectedListener(this);
 	}
 
 	
@@ -99,10 +95,14 @@ public class LaenderDerWeltActivity extends ListActivity implements OnClickListe
      	//Array list of countries to display in the spinner:
  		//create an ArrayAdapter from the String Array
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, countriesForSpinner);
+        
         //set the view for the Drop down list
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        
         //set the ArrayAdapter to the spinner
         spinnerCountryName.setAdapter(arrayAdapter);
+        
+        loadCountryData();
      }
  
 	
@@ -115,13 +115,19 @@ public class LaenderDerWeltActivity extends ListActivity implements OnClickListe
 
 	
 	@Override
-	public void onClick(View view) {
-		
-		if (view.getId() == R.id.buttonGo) {
-			loadCountryData();
-		}
+	public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+//		Toast.makeText(parent.getContext(), 
+//		        "OnItemSelectedListener : " + parent.getItemAtPosition(pos).toString(),
+//		        Toast.LENGTH_SHORT).show();
+		loadCountryData();
 	}
-
+	
+	@Override
+    public void onNothingSelected(AdapterView<?> parent) {
+        // Another interface callback
+    }
+    
+	
 	
 	private void loadCountryData() {
 		
