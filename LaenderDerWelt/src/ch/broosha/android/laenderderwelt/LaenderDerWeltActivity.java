@@ -43,7 +43,7 @@ public class LaenderDerWeltActivity extends ListActivity implements OnItemSelect
         createCountriesSpinnerDropDown(input);
 		
 		// spinnerCountryName: Land ausgesucht
-		spinnerCountryName. setOnItemSelectedListener(this);
+		spinnerCountryName.setOnItemSelectedListener(this);
 	}
 
 	
