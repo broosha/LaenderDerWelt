@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Country Overview</string>
+   	<string name="menu_settings">Settings</string>
+    <string name="countries_overview_title_placeholder">Switzerland</string>
+    <string name="capital_placeholder">Bern</string>
+    <string name="area_placeholder">41290 km</string>
+    <string name="population_placeholder">7581000</string>
+    <string name="country_input">Insert a country</string>
+    <string name="button_go">Search</string>
+    <string name="button_go_neighbour">Show neighbour</string>
+    <string name="ham_countries_api_uri">http://api.aerisapi.com/countries/%s?&amp;client_id=KdcEyosiD4ZS2KB5Ls8Kd&amp;client_secret=dWilzIYSdq5AfZ2bxHMTXxunpWW5LhGFClcGoKwv</string>
+    <string name="continent_placeholder">eu</string>
+    <string name="country_data_still_loading">Country information still loading…</string>
+    <string name="flag_description">Flag of the choosed country</string>
+
+</resources>

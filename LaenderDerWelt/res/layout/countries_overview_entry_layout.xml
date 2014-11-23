@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <TextView
+        android:id="@+id/textViewCountriesOverviewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:shadowColor="#c0c0c0"
+        android:shadowDx="4.0"
+        android:shadowDy="4.0"
+        android:textSize="24sp"
+        android:text="@string/countries_overview_title_placeholder" />
+
+	<ImageView
+        android:id="@+id/imageViewIcon"
+        android:contentDescription="@string/flag_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="4dp"
+        android:src="@drawable/ic_launcher"
+        android:layout_below="@+id/textViewCountriesOverviewTitle" />
+    
+   <TextView
+        android:id="@+id/textViewCapital"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/imageViewIcon"
+        android:layout_below="@+id/textViewCountriesOverviewTitle"
+        android:text="@string/capital_placeholder" />
+
+    <TextView
+        android:id="@+id/textViewArea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/imageViewIcon"
+        android:layout_below="@+id/textViewCapital"
+        android:text="@string/area_placeholder" />
+
+    <TextView
+        android:id="@+id/textViewPopulation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/imageViewIcon"
+        android:layout_below="@+id/textViewArea"
+        android:text="@string/population_placeholder" />
+
+    <TextView
+        android:id="@+id/textViewContinent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/imageViewIcon"
+        android:layout_below="@+id/textViewPopulation"
+        android:text="@string/continent_placeholder" />
+
+    
+</RelativeLayout>
+

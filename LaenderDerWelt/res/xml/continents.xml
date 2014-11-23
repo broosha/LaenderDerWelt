@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<continents>
+	<continent code="AN" name="Antarctica"/>
+   	<continent code="AF" name="Africa"/>
+	<continent code="AS" name="Asia"/>
+    <continent code="EU" name="Europe"/>
+    <continent code="NA" name="North America"/>
+    <continent code="SA" name="South America"/>
+    <continent code="OC" name="Oceania"/>
+</continents>

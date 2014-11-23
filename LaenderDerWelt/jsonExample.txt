@@ -1,0 +1,20 @@
+{
+	"success":true,
+	"error":null,
+	
+	"response":{
+		"place":{
+			"name":"switzerland",
+			"iso":"ch",
+			"iso3":"che",
+			"isoNum":"756",
+			"fips":"sz",
+			"continent":"eu"},
+		"profile":{
+			"capital":"berne",
+			"areaKM":41290,
+			"areaMI":25656.42,
+			"pop":7581000,
+			"neighbors":["de","it","li","fr","at"]}
+	}
+}
