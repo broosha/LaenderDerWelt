@@ -96,7 +96,7 @@ public class NetworkUtility {
 				HttpEntity entity = response.getEntity();
 				InputStream is = entity.getContent();
 				long clen = entity.getContentLength();
-				String encoding = "iso-8859-1";
+				String encoding = "UTF-8";
 				if (entity.getContentEncoding()!=null)
 				{
 				  encoding = entity.getContentEncoding().getValue();

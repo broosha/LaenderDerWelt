@@ -67,6 +67,11 @@ public class CountriesAdapter extends BaseAdapter {
 		TextView textViewPopulation = (TextView) result.findViewById(R.id.textViewPopulation);
 		TextView textViewArea = (TextView) result.findViewById(R.id.textViewArea);
 		TextView textViewContinent = (TextView) result.findViewById(R.id.textViewContinent);
+		TextView textViewNativeName = (TextView) result.findViewById(R.id.textViewNativeName);
+		TextView textViewCurrency = (TextView) result.findViewById(R.id.textViewCurrency);
+		TextView textViewCallingCode = (TextView) result.findViewById(R.id.textViewCallingCode);
+		TextView textViewTopLevelDomain = (TextView) result.findViewById(R.id.textViewTopLevelDomain);
+		TextView textViewGiniIndex = (TextView) result.findViewById(R.id.textViewGiniIndex);
 //		ListView listViewNeighbours = (ListView) result.findViewById(R.id.listViewNeighbours);
 //		TextView listViewNeighbours = (TextView) result.findViewById(R.id.textViewNeighbours);
 		ImageView imageViewIcon = (ImageView) result.findViewById(R.id.imageViewIcon);
@@ -85,53 +90,54 @@ public class CountriesAdapter extends BaseAdapter {
 		} else {
 			textViewPopulation.setText("Population: -");
 		}
+		
 		if (country.getArea() != null && country.getArea().trim().length() > 0 && !"unknown".equals(country.getArea()) && Double.valueOf(country.getArea()) >  0) {
 			textViewArea.setText("Area: " + DecimalFormat.getInstance(new Locale("de", "CH")).format(Double.valueOf(country.getArea())) + " km");
 		} else {
 			textViewArea.setText("Area: -");
 		}
 		
-		XmlResourceParser xrpContinent = this.context.getResources().getXml(R.xml.continents);
-		try {
-			int eventType = xrpContinent.getEventType();
-	        while (eventType != XmlPullParser.END_DOCUMENT) {
-	        	if(eventType == XmlPullParser.START_DOCUMENT) {
-	        		System.out.println("Start document");
-	        	} else if(eventType == XmlPullParser.END_DOCUMENT) {
-	        		System.out.println("End document");
-	        	} else if(eventType == XmlPullParser.START_TAG) {
-	        		System.out.println("Start tag " + xrpContinent.getName());
-	        		if ("continent".equals(xrpContinent.getName())) {
-	        			if (country.getContinent().toUpperCase().equals(xrpContinent.getAttributeValue(0))) {
-	        				textViewContinent.setText("Continent: " + xrpContinent.getAttributeValue(1) + " (" + xrpContinent.getAttributeValue(0) + ")");
-	        				break;
-	        			}
-	        		}
-	        	} else if(eventType == XmlPullParser.END_TAG) {
-	        		System.out.println("End tag " + xrpContinent.getName());
-	        	} else if(eventType == XmlPullParser.TEXT) {
-	        		System.out.println("Text " + xrpContinent.getText());
-	        	}
-	        	eventType = xrpContinent.next();
-	        }
+		if (country.getContinent() != null && country.getContinent().trim().length() > 0) {
+			textViewContinent.setText("Region: " + country.getContinent());
+		}  else {
+			textViewNativeName.setText("Region: -");
 		}
-		catch (XmlPullParserException e) {
-			e.printStackTrace();
+		
+		if (country.getNativeName() != null && country.getNativeName().trim().length() > 0) {
+			textViewNativeName.setText("Origin name: " + country.getNativeName());
+		} else {
+			textViewNativeName.setText("Origin name: -");
 		}
-		catch (IOException e) {
-			e.printStackTrace();
+		
+		if (country.getCurrency() != null && country.getCurrency().trim().length() > 0) {
+			textViewCurrency.setText("Currency: " + country.getCurrency());
+		} else {
+			textViewCurrency.setText("Currency: -");
 		}
-		finally {
-			xrpContinent.close();
+		
+		if (country.getCallingCode() != null && country.getCallingCode().trim().length() > 0) {
+			textViewCallingCode.setText("Calling code: " + country.getCallingCode());
+		} else {
+			textViewCallingCode.setText("Calling code: -");
 		}
+		
+		if (country.getTopLevelDomain() != null && country.getTopLevelDomain().trim().length() > 0) {
+			textViewTopLevelDomain.setText("Top level domain: " + country.getTopLevelDomain());
+		} else {
+			textViewTopLevelDomain.setText("Top level domain: -");
+		}
+		
+		if (country.getGiniIndex() != null && country.getGiniIndex().trim().length() > 0 && !"null".equals(country.getGiniIndex())) {
+			textViewGiniIndex.setText("GINI Index: " + country.getGiniIndex());
+		} else {
+			textViewGiniIndex.setText("GINI Index: -");
+		}
+		
 		
 		if (country.getNeighbours() != null && country.getNeighbours().size() > 0) {
 			String stringNeighbors = "";
 			for(int i = 0; i < country.getNeighbours().size(); i++) {
 		    	String currentNeighbor = this.getFullListCountries().get(country.getNeighbours().get(i));
-		    	System.out.println("*****Maplänge:"+this.getFullListCountries().size());
-		    	System.out.println("*****Key:"+country.getNeighbours().get(i));
-		    	System.out.println("*****Value:"+this.getFullListCountries().get(country.getNeighbours().get(i)));
 		    	
 		    	stringNeighbors = stringNeighbors + currentNeighbor;
 		    }
@@ -153,8 +159,12 @@ public class CountriesAdapter extends BaseAdapter {
 		return result;
 	}
 	
-
-	
+	/**
+	 * 
+	 * @param map
+	 * @param value
+	 * @return
+	 */
 	public static <T, E> T getKeyByValue(Map <T, E> map, E value) {
 	    for (Entry <T, E> entry : map.entrySet()) {
 	        if (value.equals(entry.getValue())) {

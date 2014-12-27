@@ -61,23 +61,14 @@ public class LaenderDerWeltActivity extends ListActivity implements OnItemSelect
 		try {
  			int eventType = xrpLand.getEventType();
  	        while (eventType != XmlPullParser.END_DOCUMENT) {
- 	        	if(eventType == XmlPullParser.START_DOCUMENT) {
- 	        		System.out.println("Start document");
- 	        	} else if(eventType == XmlPullParser.END_DOCUMENT) {
- 	        		System.out.println("End document");
- 	        	} else if(eventType == XmlPullParser.START_TAG) {
- 	        		System.out.println("Start tag " + xrpLand.getName());
+ 	        	if (eventType == XmlPullParser.START_TAG) {
  	        		if ("iso_3166_entry".equals(xrpLand.getName())) {
  	        			if (xrpLand.getAttributeCount() >= 4) {
  	        				allCountries.put(xrpLand.getAttributeValue(0), xrpLand.getAttributeValue(3));
  	        				countriesForSpinner.add(xrpLand.getAttributeValue(3));
  	        			}
  	        		}
- 	        	} else if(eventType == XmlPullParser.END_TAG) {
- 	        		System.out.println("End tag " + xrpLand.getName());
- 	        	} else if(eventType == XmlPullParser.TEXT) {
- 	        		System.out.println("Text " + xrpLand.getText());
- 	        	}
+ 	        	} 
  	        	eventType = xrpLand.next();
  	        }
  	        countriesAdapter.setFullListCountries(allCountries);

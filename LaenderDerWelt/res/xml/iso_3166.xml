@@ -101,11 +101,6 @@ Source: <http://www.iso.org/iso/country_codes>
 		numeric_code="660"
 		name="Anguilla" />
 	<iso_3166_entry
-		alpha_2_code="AQ"
-		alpha_3_code="ATA"
-		numeric_code="010"
-		name="Antarctica" />
-	<iso_3166_entry
 		alpha_2_code="AG"
 		alpha_3_code="ATG"
 		numeric_code="028"
@@ -1109,11 +1104,6 @@ Source: <http://www.iso.org/iso/country_codes>
 		numeric_code="652"
 		name="Saint Barthélemy" />
 	<iso_3166_entry
-		alpha_2_code="SH"
-		alpha_3_code="SHN"
-		numeric_code="654"
-		name="Saint Helena, Ascension and Tristan da Cunha" />
-	<iso_3166_entry
 		alpha_2_code="KN"
 		alpha_3_code="KNA"
 		numeric_code="659"
@@ -1228,11 +1218,6 @@ Source: <http://www.iso.org/iso/country_codes>
 		name="South Africa"
 		official_name="Republic of South Africa" />
 	<iso_3166_entry
-		alpha_2_code="GS"
-		alpha_3_code="SGS"
-		numeric_code="239"
-		name="South Georgia and the South Sandwich Islands" />
-	<iso_3166_entry
 		alpha_2_code="ES"
 		alpha_3_code="ESP"
 		numeric_code="724"
@@ -1262,11 +1247,6 @@ Source: <http://www.iso.org/iso/country_codes>
 		numeric_code="728"
 		name="South Sudan"
 		official_name="Republic of South Sudan" />
-	<iso_3166_entry
-		alpha_2_code="SJ"
-		alpha_3_code="SJM"
-		numeric_code="744"
-		name="Svalbard and Jan Mayen" />
 	<iso_3166_entry
 		alpha_2_code="SZ"
 		alpha_3_code="SWZ"
@@ -1399,11 +1379,6 @@ Source: <http://www.iso.org/iso/country_codes>
 		numeric_code="840"
 		name="United States"
 		official_name="United States of America" />
-	<iso_3166_entry
-		alpha_2_code="UM"
-		alpha_3_code="UMI"
-		numeric_code="581"
-		name="United States Minor Outlying Islands" />
 	<iso_3166_entry
 		alpha_2_code="UY"
 		alpha_3_code="URY"
