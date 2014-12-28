@@ -94,7 +94,8 @@ public class CountriesAdapter extends BaseAdapter {
 		}
 		
 		if (country.getArea() != null && country.getArea().trim().length() > 0 && !"unknown".equals(country.getArea()) && Double.valueOf(country.getArea()) >  0) {
-			textViewArea.setText(DecimalFormat.getInstance(new Locale("de", "CH")).format(Double.valueOf(country.getArea())) + " km");
+			String areaFormatted = DecimalFormat.getInstance(new Locale("de", "CH")).format(Double.valueOf(country.getArea()));
+			textViewArea.setText(Html.fromHtml(areaFormatted + " km<sup><small>2</small></sup>"));
 		} else {
 			textViewArea.setText("-");
 		}
@@ -142,15 +143,15 @@ public class CountriesAdapter extends BaseAdapter {
 		}
 		
 		if (country.getLanguages() != null && country.getLanguages().trim().length() > 0) {
-			textViewLanguages.setText(country.getLanguages());
+			textViewLanguages.setText(Html.fromHtml(country.getLanguages()));
 		} else {
-			textViewLanguages.setText("Languages: -");
+			textViewLanguages.setText("-");
 		}
 		
 		if (country.getNeighbours() != null && country.getNeighbours().trim().length() > 0) {
-			textViewNeighbours.setText(country.getNeighbours());
+			textViewNeighbours.setText(Html.fromHtml(country.getNeighbours()));
 		} else {
-			textViewNeighbours.setText("Neighbours: -");
+			textViewNeighbours.setText("-");
 		}
 		if (country.getNeighboursList() != null && country.getNeighboursList().size() > 0) {
 			this.setNeighboursList(country.getNeighboursList());
@@ -161,7 +162,7 @@ public class CountriesAdapter extends BaseAdapter {
 			InputStream is = this.context.getAssets().open(fileName);
 			BufferedInputStream buf = new BufferedInputStream(is);
 			imageViewIcon.setImageBitmap(BitmapFactory.decodeStream(buf));
-		
+			is.close();
 		} catch (IOException e) {
 			e.printStackTrace(); 
 		}
@@ -171,13 +172,13 @@ public class CountriesAdapter extends BaseAdapter {
 			InputStream is = this.context.getAssets().open(apiIconName);
 			BufferedInputStream buf = new BufferedInputStream(is);
 			restCountriesViewIcon.setImageBitmap(BitmapFactory.decodeStream(buf));
-		
+			is.close();
 		} catch (IOException e) {
 			e.printStackTrace(); 
 		}
 		
 		textViewRestCountriesApi.setMovementMethod(LinkMovementMethod.getInstance()); 
-		textViewRestCountriesApi.setText(Html.fromHtml("Powered by <a href=\"http://restcountries.eu/\">REST Countries API</a>"));
+		textViewRestCountriesApi.setText(Html.fromHtml("<i>Powered by <a href=\"http://restcountries.eu/\">REST Countries</a> API</i>"));
 		
 		return result;
 	}

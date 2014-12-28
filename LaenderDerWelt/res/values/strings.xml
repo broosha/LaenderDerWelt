@@ -49,5 +49,5 @@
     <string name="api_description">Icon of REST Countries API</string>
 	<string name="restcountries_all_countries">http://restcountries.eu/rest/v1/all</string>
 	<string name="restcountries_alpha_code">http://restcountries.eu/rest/v1/alpha/</string>
-	<string name="restCountriesApi_placeholder">Powered by <a href="http://restcountries.eu/">REST Countries API</a></string>
+	<string name="restCountriesApi_placeholder">Powered by <a href="http://restcountries.eu/">REST Countries</a> API</string>
  </resources>

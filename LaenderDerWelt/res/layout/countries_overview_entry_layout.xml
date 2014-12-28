@@ -174,7 +174,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/imageViewIcon"
-        android:layout_marginLeft="7dp"
         android:layout_below="@+id/textViewCurrencies"
         android:textSize="17sp"
         android:text="@string/callingCodes_placeholder" />
@@ -195,7 +194,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/imageViewIcon"
-        android:layout_marginLeft="7dp"
         android:layout_below="@+id/textViewCallingCodes"
         android:textSize="17sp"
         android:text="@string/topLevelDomains_placeholder" />

@@ -1,6 +1,8 @@
 package ch.broosha.android.laenderderwelt;
 
+import java.io.BufferedInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +16,7 @@ import org.xmlpull.v1.XmlPullParserException;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.XmlResourceParser;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.widget.Toast;
 import ch.broosha.android.laenderderwelt.utilities.NetworkUtility;
@@ -38,6 +41,9 @@ public class CountryLoader {
 	private static final String REST_COUNTRIES_TAG_BORDERS = "borders";
 	private static final String REST_COUNTRIES_TAG_TIMEZONES = "timezones";
 	private static final String REST_COUNTRIES_TAG_LANGUAGES = "languages";
+	
+	private static final String LANGUAGES_JSON_TAG_NAME = "name";
+	private static final String LANGUAGES_JSON_TAG_NATIVE_NAME = "nativeName";
 	
 	// DEPRECATED API:
 	private static final String HAM_TAG_RESPONSE = "response";
@@ -201,13 +207,13 @@ public class CountryLoader {
 		    	if (languagesJson.length() == 1) {
 		    		// do nothing
 		    	} else {
-		    		languages = languagesJson.length() + " languages" + System.getProperty("line.separator") ;
+		    		languages = "<i>" + languagesJson.length() + " languages </i> <br />";
 		    	}
 		    	for(int i = 0; i < languagesJson.length(); i++) {
-		    		if (i > 0) {
-		    			languages = languages + ", ";
-		    		}
 		    		languages = languages + getLanguageText(languagesJson.getString(i));
+		    		if (languagesJson.length() > 1 && i < (languagesJson.length()-1)) {
+		    			languages = languages + ", <br />";
+			    	}
 		    	}
 		    }
 		    land.setLanguages(languages);
@@ -218,7 +224,7 @@ public class CountryLoader {
 		    	if (bordersJson.length() == 1) {
 		    		// do nothing
 		    	} else {
-		    		neighbours = bordersJson.length() + " neighbours" + System.getProperty("line.separator") ;
+		    		neighbours = "<i>" + bordersJson.length() + " neighbours </i> <br />" ;
 		    	}
 		    	for(int i = 0; i < bordersJson.length(); i++) {
 		    		if (i > 0) {
@@ -295,36 +301,38 @@ public class CountryLoader {
 	 */
 	public String getLanguageText (String languageCode) {
 		String result = languageCode.toUpperCase();
-		if (languageCode != null && languageCode.trim().length() > 0) {
-			XmlResourceParser xrpLanguages = this.context.getResources().getXml(R.xml.iso_639_1);
-			try {
-				int eventType = xrpLanguages.getEventType();
-		        while (eventType != XmlPullParser.END_DOCUMENT) {
-		        	if(eventType == XmlPullParser.START_TAG) {
-		        		if ("LanguageCode".equals(xrpLanguages.getName())) {
-		        			if (languageCode.toLowerCase().trim().equals(xrpLanguages.nextText())) {
-		        				result = languageCode + " (";
-		        				eventType = xrpLanguages.next();
-		        				if ("LanguageName".equals(xrpLanguages.getName())) {
-		        					result = xrpLanguages.nextText();
-		        					break;
-		        				}
-		        			}
-		        		}
-		        	}
-		        	eventType = xrpLanguages.next();
-		        }
+		String languagesJson = null;
+	    try {
+	    	InputStream is = this.context.getAssets().open("__iso639.json");
+	        int size = is.available();
+	        byte[] buffer = new byte[size];
+	        is.read(buffer);
+	        is.close();
+	        languagesJson = new String(buffer, "UTF-8");
+	    
+	    } catch (IOException ex) {
+	        ex.printStackTrace();
+	        return null;
+	    }
+	   
+	    try {
+			JSONObject json = new JSONObject(languagesJson);
+			JSONObject languageJson = json.getJSONObject(languageCode.toLowerCase());
+			String nameJson = languageJson.getString(LANGUAGES_JSON_TAG_NAME);
+			String nativeNameJson = languageJson.getString(LANGUAGES_JSON_TAG_NATIVE_NAME);
+			
+			if (nameJson != null && nameJson.trim().length() > 0) {
+				result = nameJson;
+				
+				if (nativeNameJson != null && nativeNameJson.trim().length() > 0 && !nameJson.equals(nativeNameJson)) {
+					result = result + " (" + nativeNameJson + ")";
+				}
 			}
-			catch (XmlPullParserException e) {
-				e.printStackTrace();
-			}
-			catch (IOException e) {
-				e.printStackTrace();
-			}
-			finally {
-				xrpLanguages.close();
-			}
-		}
+			
+	    } catch (JSONException e) {
+		    e.printStackTrace();
+		} 
+	    
 		return result;
 	}
 	
