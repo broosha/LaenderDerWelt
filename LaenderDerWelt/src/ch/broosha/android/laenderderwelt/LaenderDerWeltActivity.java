@@ -12,18 +12,22 @@ import android.app.ListActivity;
 import android.app.ProgressDialog;
 import android.content.res.XmlResourceParser;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.Toast;
 
-public class LaenderDerWeltActivity extends ListActivity implements OnItemSelectedListener {
+public class LaenderDerWeltActivity extends ListActivity implements OnItemSelectedListener, OnClickListener  {
 	
 //	private Button buttonGo;
 	private Spinner spinnerCountryName;
-	private CountriesAdapter countriesAdapter;
+	private CountriesAdapter countriesAdapterOnCreate;
+	private CountriesAdapter countriesAdapterItem;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +40,8 @@ public class LaenderDerWeltActivity extends ListActivity implements OnItemSelect
 		// Default ArrayAdapter wird durch ein eigenes Adapter ersetzt:
 		// LaenderAdapter definieren:
 		//ArrayAdapter<Land> adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, new ArrayList<Land>());
-		countriesAdapter = new CountriesAdapter(this, new ArrayList<Country>());
-		setListAdapter(countriesAdapter);
+		countriesAdapterOnCreate = new CountriesAdapter(this, new ArrayList<Country>());
+		setListAdapter(countriesAdapterOnCreate);
 		
 		//Dynamically generate a spinner data:
         createCountriesSpinnerDropDown(input);
@@ -71,7 +75,7 @@ public class LaenderDerWeltActivity extends ListActivity implements OnItemSelect
  	        	} 
  	        	eventType = xrpLand.next();
  	        }
- 	        countriesAdapter.setFullListCountries(allCountries);
+ 	       countriesAdapterOnCreate.setFullListCountries(allCountries);
  		}
  		catch (XmlPullParserException e) {
  			e.printStackTrace();
@@ -120,8 +124,62 @@ public class LaenderDerWeltActivity extends ListActivity implements OnItemSelect
     
 	
 	
-	private void loadCountryData() {
+	public void onClick(View view) {
 		
+		if (view.getId() == R.id.textViewNeighbours) {
+			String neighboursToastText = " no neighbours ";
+			if (countriesAdapterItem.getNeighboursList() != null && countriesAdapterItem.getNeighboursList().size() > 0) {
+				neighboursToastText = getNeighboursToastText(countriesAdapterItem.getNeighboursList());
+				
+			}
+			Toast.makeText(getApplicationContext(), neighboursToastText, Toast.LENGTH_LONG).show();
+		}
+	}
+
+	/**
+	 * 
+	 * @param neighboursCodes
+	 * @param defaultText
+	 * @return
+	 */
+	private String getNeighboursToastText (ArrayList<String> neighboursCodes) {
+		String result = "";
+		int i = 0;
+		for (String neighboursCode : neighboursCodes) {
+			if (i > 0) {
+				result = result + ", ";
+			}
+			XmlResourceParser xrpCountries = this.getResources().getXml(R.xml.iso_3166);
+			try {
+				int eventType = xrpCountries.getEventType();
+		        while (eventType != XmlPullParser.END_DOCUMENT) {
+		        	if(eventType == XmlPullParser.START_TAG) {
+		        		if ("iso_3166_entry".equals(xrpCountries.getName())) {
+		        			if (neighboursCode.toUpperCase().trim().equals(xrpCountries.getAttributeValue(1))) {
+		        				result = result + xrpCountries.getAttributeValue(3);
+		        				i++;
+		        				break;
+		        			}
+		        		}
+		        	}
+		        	eventType = xrpCountries.next();
+		        }
+		    }
+			catch (XmlPullParserException e) {
+				e.printStackTrace();
+			}
+			catch (IOException e) {
+				e.printStackTrace();
+			}
+			finally {
+				xrpCountries.close();
+			}
+		}
+		
+		return result;
+	}
+	
+	private void loadCountryData() {
 		final CountryLoader countryLoader = new CountryLoader(this);
 		
 		// Progressdialog für das Laden von Daten aus dem Internet wird aufbereitet:
@@ -133,7 +191,7 @@ public class LaenderDerWeltActivity extends ListActivity implements OnItemSelect
 		Thread worker = new Thread() {
 			public void run () {
 				
-				String isoKey = CountriesAdapter.getKeyByValue(countriesAdapter.getFullListCountries(), spinnerCountryName.getSelectedItem().toString());
+				String isoKey = CountriesAdapter.getKeyByValue(countriesAdapterOnCreate.getFullListCountries(), spinnerCountryName.getSelectedItem().toString());
 				final List<Country> countries = countryLoader.loadCountries(isoKey);
 				
 				runOnUiThread(new Runnable() {
@@ -146,6 +204,7 @@ public class LaenderDerWeltActivity extends ListActivity implements OnItemSelect
 						//ArrayAdapter<Land> adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, new ArrayList<Land>());
 						CountriesAdapter countriesAdapter = new CountriesAdapter(LaenderDerWeltActivity.this, countries);
 						setListAdapter(countriesAdapter);
+						countriesAdapterItem = countriesAdapter;
 					}
 				});
 					

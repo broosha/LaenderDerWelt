@@ -31,6 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/imageViewIcon"
         android:layout_below="@+id/textViewCountriesOverviewTitle"
+        android:textSize="17sp"
         android:text="@string/capital_placeholder" />
 
 	<TextView
@@ -39,6 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/imageViewIcon"
         android:layout_below="@+id/textViewCapital"
+        android:textSize="17sp"
         android:text="@string/nativeName_placeholder" />
 	
     <TextView
@@ -47,6 +49,7 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/imageViewIcon"
         android:layout_below="@+id/textViewNativeName"
+        android:textSize="17sp"
         android:text="@string/area_placeholder" />
 
     <TextView
@@ -55,6 +58,7 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/imageViewIcon"
         android:layout_below="@+id/textViewArea"
+        android:textSize="17sp"
         android:text="@string/population_placeholder" />
 
     <TextView
@@ -63,42 +67,113 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/imageViewIcon"
         android:layout_below="@+id/textViewPopulation"
-        android:text="@string/continent_placeholder" />
+        android:textSize="17sp"
+        android:text="@string/continent_placeholder" 
+        android:paddingBottom="7dp" />
 	
     <View style="@style/Divider"
         android:layout_below="@+id/textViewContinent" />
     
     <TextView
-        android:id="@+id/textViewCurrency"
+        android:id="@+id/textViewCurrencies"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/imageViewIcon"
         android:layout_below="@+id/textViewContinent"
-        android:text="@string/currency_placeholder" />
+        android:textSize="17sp"
+        android:text="@string/currencies_placeholder" />
     
     <TextView
-        android:id="@+id/textViewCallingCode"
+        android:id="@+id/textViewCallingCodes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/imageViewIcon"
-        android:layout_below="@+id/textViewCurrency"
-        android:text="@string/callingCode_placeholder" />
+        android:layout_below="@+id/textViewCurrencies"
+        android:textSize="17sp"
+        android:text="@string/callingCodes_placeholder" />
     
     <TextView
-        android:id="@+id/textViewTopLevelDomain"
+        android:id="@+id/textViewTopLevelDomains"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/imageViewIcon"
-        android:layout_below="@+id/textViewCallingCode"
-        android:text="@string/topLevelDomain_placeholder" />
+        android:layout_below="@+id/textViewCallingCodes"
+        android:textSize="17sp"
+        android:text="@string/topLevelDomains_placeholder" />
+    
+    <TextView
+        android:id="@+id/textViewTimezones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/imageViewIcon"
+        android:layout_below="@+id/textViewTopLevelDomains"
+        android:textSize="17sp"
+        android:text="@string/timezones_placeholder" />
     
     <TextView
         android:id="@+id/textViewGiniIndex"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/imageViewIcon"
-        android:layout_below="@+id/textViewTopLevelDomain"
-        android:text="@string/giniIndex_placeholder" />
+        android:layout_below="@+id/textViewTimezones"
+        android:textSize="17sp"
+        android:text="@string/giniIndex_placeholder" 
+        android:paddingBottom="7dp" />
     
+    <View style="@style/Divider"
+        android:layout_below="@+id/textViewGiniIndex" />
+    
+    <TextView
+        android:id="@+id/textViewLanguages"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/imageViewIcon"
+        android:layout_below="@+id/textViewGiniIndex"
+        android:textSize="17sp"
+        android:text="@string/languages_placeholder" 
+        android:paddingBottom="7dp" 
+        android:paddingTop ="5dp" />
+    
+    <View style="@style/Divider"
+        android:layout_below="@+id/textViewLanguages" />
+    
+    <TextView
+        android:id="@+id/textViewNeighbours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/imageViewIcon"
+        android:layout_below="@+id/textViewLanguages"
+        android:textSize="17sp"
+        android:text="@string/neighbours_placeholder" 
+        android:paddingBottom="7dp" 
+        android:paddingTop ="5dp" 
+        android:onClick="onClick"                
+       	android:clickable="true" />
+    
+    <View style="@style/Divider"
+        android:layout_below="@+id/textViewNeighbours" />
+    
+    <TextView
+        android:id="@+id/textViewRestCountriesApi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textViewNeighbours"
+        android:text="@string/restCountriesApi_placeholder"
+        android:textSize="12sp"
+        android:textStyle="italic" 
+        android:layout_marginRight="7dp" 
+        android:clickable="true" />
+    
+   <ImageView
+        android:id="@+id/restCountriesViewIcon"
+        android:contentDescription="@string/api_description"
+        android:layout_height="18sp"
+        android:layout_width="18sp"
+        android:src="@drawable/ic_launcher"
+        android:layout_below="@+id/textViewNeighbours" 
+        android:layout_alignParentLeft="true"
+       	android:layout_marginLeft="7dp" />
+   
 </RelativeLayout>
 

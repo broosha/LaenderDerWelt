@@ -12,13 +12,14 @@ public class Country {
 	private String capital;
 	private String area;
 	private String population;
-	private String topLevelDomain;
-	private String callingCode;
-	private String currency;
 	private String giniIndex;
-	private ArrayList<String> neighbours;
-	private ArrayList<String> languages;
-	private ArrayList<String> timezones;
+	private String topLevelDomains;
+	private String callingCodes;
+	private String currencies;
+	private String languages;
+	private String timezones;
+	private String neighbours;
+	private ArrayList<String> neighboursList;
 	
 	public Country () {
 		name = "";
@@ -29,13 +30,13 @@ public class Country {
 		capital = "";
 		area = "";
 		population = "";
-		topLevelDomain = "";
-		callingCode = "";
-		currency = "";
 		giniIndex = "";
-		neighbours = new ArrayList<String>();
-		languages = new ArrayList<String>();
-		timezones = new ArrayList<String>();
+		topLevelDomains = "";
+		callingCodes = "";
+		currencies = "";
+		neighbours = "";
+		languages = "";
+		timezones = "";
 	}
 
 	
@@ -87,14 +88,6 @@ public class Country {
 		this.population = checkNull(population);
 	}
 
-	public ArrayList<String> getNeighbours() {
-		return neighbours;
-	}
-
-	public void setNeighbours(ArrayList<String> neighbours) {
-		this.neighbours = neighbours;
-	}
-
 	public String getFullName() {
 		return fullName;
 	}
@@ -119,44 +112,60 @@ public class Country {
 		this.giniIndex = giniIndex;
 	}
 
-	public String getTopLevelDomain() {
-		return topLevelDomain;
+	public String getTopLevelDomains() {
+		return topLevelDomains;
 	}
 
-	public void setTopLevelDomain(String topLevelDomain) {
-		this.topLevelDomain = topLevelDomain;
+	public void setTopLevelDomains(String topLevelDomains) {
+		this.topLevelDomains = topLevelDomains;
 	}
 
-	public String getCallingCode() {
-		return callingCode;
+	public String getCallingCodes() {
+		return callingCodes;
 	}
 
-	public void setCallingCode(String callingCode) {
-		this.callingCode = callingCode;
+	public void setCallingCodes(String callingCodes) {
+		this.callingCodes = callingCodes;
 	}
 
-	public String getCurrency() {
-		return currency;
+	public String getCurrencies() {
+		return currencies;
 	}
 
-	public void setCurrency(String currency) {
-		this.currency = currency;
+	public void setCurrencies(String currencies) {
+		this.currencies = currencies;
 	}
 
-	public ArrayList<String> getLanguages() {
+	public String getNeighbours() {
+		return neighbours;
+	}
+
+	public void setNeighbours(String neighbours) {
+		this.neighbours = neighbours;
+	}
+
+	public String getLanguages() {
 		return languages;
 	}
 
-	public void setLanguages(ArrayList<String> languages) {
+	public void setLanguages(String languages) {
 		this.languages = languages;
 	}
 
-	public ArrayList<String> getTimezones() {
+	public String getTimezones() {
 		return timezones;
 	}
 
-	public void setTimezones(ArrayList<String> timezones) {
+	public void setTimezones(String timezones) {
 		this.timezones = timezones;
+	}
+
+	public ArrayList<String> getNeighboursList() {
+		return neighboursList;
+	}
+
+	public void setNeighboursList(ArrayList<String> neighboursList) {
+		this.neighboursList = neighboursList;
 	}
 
 

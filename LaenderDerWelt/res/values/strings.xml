@@ -7,10 +7,13 @@
     <string name="area_placeholder">41290 km</string>
     <string name="population_placeholder">7581000</string>
     <string name="nativeName_placeholder">Schweiz</string>
-    <string name="currency_placeholder">CHE</string>
-    <string name="callingCode_placeholder">+41</string>
-    <string name="topLevelDomain_placeholder">.ch</string>
+    <string name="currencies_placeholder">CHE</string>
+    <string name="callingCodes_placeholder">+41</string>
+    <string name="topLevelDomains_placeholder">.ch</string>
     <string name="giniIndex_placeholder">33.7</string>
+    <string name="languages_placeholder">german</string>
+    <string name="neighbours_placeholder">AUT, FRA, ITA, LIE, DEU</string>
+    <string name="timezones_placeholder">AUT, FRA, ITA, LIE, DEU</string>
     <string name="country_input">Insert a country</string>
     <string name="button_go">Show</string>
     <string name="button_go_neighbour">Show neighbour</string>
@@ -18,6 +21,8 @@
     <string name="continent_placeholder">eu</string>
     <string name="country_data_still_loading">Country information still loading…</string>
     <string name="flag_description">Flag of the choosed country</string>
+    <string name="api_description">Icon of REST Countries API</string>
 	<string name="restcountries_all_countries">http://restcountries.eu/rest/v1/all</string>
 	<string name="restcountries_alpha_code">http://restcountries.eu/rest/v1/alpha/</string>
+	<string name="restCountriesApi_placeholder">Powered by <a href="http://restcountries.eu/">REST Countries API</a></string>
  </resources>

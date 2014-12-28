@@ -4,18 +4,17 @@ import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
-
 import android.content.Context;
-import android.content.res.XmlResourceParser;
 import android.graphics.BitmapFactory;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,6 +29,8 @@ public class CountriesAdapter extends BaseAdapter {
 	private List<Country> countries;
 	
 	private HashMap<String, String> fullListCountries = new HashMap<String, String>();
+	
+	private ArrayList<String> neighboursList;
 	   
 	
 	public CountriesAdapter(Context context, List<Country> countries) {
@@ -68,15 +69,16 @@ public class CountriesAdapter extends BaseAdapter {
 		TextView textViewArea = (TextView) result.findViewById(R.id.textViewArea);
 		TextView textViewContinent = (TextView) result.findViewById(R.id.textViewContinent);
 		TextView textViewNativeName = (TextView) result.findViewById(R.id.textViewNativeName);
-		TextView textViewCurrency = (TextView) result.findViewById(R.id.textViewCurrency);
-		TextView textViewCallingCode = (TextView) result.findViewById(R.id.textViewCallingCode);
-		TextView textViewTopLevelDomain = (TextView) result.findViewById(R.id.textViewTopLevelDomain);
+		TextView textViewCurrencies = (TextView) result.findViewById(R.id.textViewCurrencies);
+		TextView textViewCallingCodes = (TextView) result.findViewById(R.id.textViewCallingCodes);
+		TextView textViewTopLevelDomains = (TextView) result.findViewById(R.id.textViewTopLevelDomains);
 		TextView textViewGiniIndex = (TextView) result.findViewById(R.id.textViewGiniIndex);
-//		ListView listViewNeighbours = (ListView) result.findViewById(R.id.listViewNeighbours);
-//		TextView listViewNeighbours = (TextView) result.findViewById(R.id.textViewNeighbours);
+		TextView textViewLanguages = (TextView) result.findViewById(R.id.textViewLanguages);
+		TextView textViewNeighbours = (TextView) result.findViewById(R.id.textViewNeighbours);
+		TextView textViewTimezones = (TextView) result.findViewById(R.id.textViewTimezones);
 		ImageView imageViewIcon = (ImageView) result.findViewById(R.id.imageViewIcon);
-		
-		
+		ImageView restCountriesViewIcon = (ImageView) result.findViewById(R.id.restCountriesViewIcon);
+		TextView textViewRestCountriesApi = (TextView) result.findViewById(R.id.textViewRestCountriesApi);
 		
 		textViewCountryOverviewTitle.setText(country.getName().toUpperCase(Locale.ENGLISH) + " (" + country.getDescription().toUpperCase() + ")");
 		if (!"unknown".equals(country.getCapital())) {
@@ -109,22 +111,22 @@ public class CountriesAdapter extends BaseAdapter {
 			textViewNativeName.setText("Origin name: -");
 		}
 		
-		if (country.getCurrency() != null && country.getCurrency().trim().length() > 0) {
-			textViewCurrency.setText("Currency: " + country.getCurrency());
+		if (country.getCurrencies() != null && country.getCurrencies().trim().length() > 0) {
+			textViewCurrencies.setText("Currency: " + country.getCurrencies());
 		} else {
-			textViewCurrency.setText("Currency: -");
+			textViewCurrencies.setText("Currency: -");
 		}
 		
-		if (country.getCallingCode() != null && country.getCallingCode().trim().length() > 0) {
-			textViewCallingCode.setText("Calling code: " + country.getCallingCode());
+		if (country.getCallingCodes() != null && country.getCallingCodes().trim().length() > 0) {
+			textViewCallingCodes.setText("Calling code: " + country.getCallingCodes());
 		} else {
-			textViewCallingCode.setText("Calling code: -");
+			textViewCallingCodes.setText("Calling code: -");
 		}
 		
-		if (country.getTopLevelDomain() != null && country.getTopLevelDomain().trim().length() > 0) {
-			textViewTopLevelDomain.setText("Top level domain: " + country.getTopLevelDomain());
+		if (country.getTopLevelDomains() != null && country.getTopLevelDomains().trim().length() > 0) {
+			textViewTopLevelDomains.setText("Top level domain: " + country.getTopLevelDomains());
 		} else {
-			textViewTopLevelDomain.setText("Top level domain: -");
+			textViewTopLevelDomains.setText("Top level domain: -");
 		}
 		
 		if (country.getGiniIndex() != null && country.getGiniIndex().trim().length() > 0 && !"null".equals(country.getGiniIndex())) {
@@ -133,17 +135,25 @@ public class CountriesAdapter extends BaseAdapter {
 			textViewGiniIndex.setText("GINI Index: -");
 		}
 		
+		if (country.getLanguages() != null && country.getLanguages().trim().length() > 0) {
+			textViewLanguages.setText(country.getLanguages());
+		} else {
+			textViewLanguages.setText("Languages: -");
+		}
 		
-		if (country.getNeighbours() != null && country.getNeighbours().size() > 0) {
-			String stringNeighbors = "";
-			for(int i = 0; i < country.getNeighbours().size(); i++) {
-		    	String currentNeighbor = this.getFullListCountries().get(country.getNeighbours().get(i));
-		    	
-		    	stringNeighbors = stringNeighbors + currentNeighbor;
-		    }
-			//ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this.context,android.R.layout.simple_list_item_1, land.getNachbarn());
-			//listViewNachbarn.setAdapter(arrayAdapter); 
-			
+		if (country.getNeighbours() != null && country.getNeighbours().trim().length() > 0) {
+			textViewNeighbours.setText(country.getNeighbours());
+		} else {
+			textViewNeighbours.setText("Neighbours: -");
+		}
+		if (country.getNeighboursList() != null && country.getNeighboursList().size() > 0) {
+			this.setNeighboursList(country.getNeighboursList());
+		}
+		
+		if (country.getTimezones() != null && country.getTimezones().trim().length() > 0) {
+			textViewTimezones.setText(country.getTimezones());
+		} else {
+			textViewTimezones.setText("Timezones: -");
 		}
 		
 		try {
@@ -155,7 +165,20 @@ public class CountriesAdapter extends BaseAdapter {
 		} catch (IOException e) {
 			e.printStackTrace(); 
 		}
-
+		
+		try {
+			String apiIconName = "_restCountries.png";
+			InputStream is = this.context.getAssets().open(apiIconName);
+			BufferedInputStream buf = new BufferedInputStream(is);
+			restCountriesViewIcon.setImageBitmap(BitmapFactory.decodeStream(buf));
+		
+		} catch (IOException e) {
+			e.printStackTrace(); 
+		}
+		
+		textViewRestCountriesApi.setMovementMethod(LinkMovementMethod.getInstance()); 
+		textViewRestCountriesApi.setText(Html.fromHtml("Powered by <a href=\"http://restcountries.eu/\">REST Countries API</a>"));
+		
 		return result;
 	}
 	
@@ -174,13 +197,20 @@ public class CountriesAdapter extends BaseAdapter {
 	    return null;
 	}
 
-
 	public HashMap<String, String> getFullListCountries() {
 		return fullListCountries;
 	}
 
 	public void setFullListCountries(HashMap<String, String> fullListCountries) {
 		this.fullListCountries = fullListCountries;
+	}
+
+	public ArrayList<String> getNeighboursList() {
+		return neighboursList;
+	}
+
+	public void setNeighboursList(ArrayList<String> neighboursList) {
+		this.neighboursList = neighboursList;
 	}
 
 }
