@@ -483,11 +483,6 @@ Source: <http://www.iso.org/iso/country_codes>
 		name="France"
 		official_name="French Republic" />
 	<iso_3166_entry
-		alpha_2_code="GF"
-		alpha_3_code="GUF"
-		numeric_code="254"
-		name="French Guiana" />
-	<iso_3166_entry
 		alpha_2_code="PF"
 		alpha_3_code="PYF"
 		numeric_code="258"
@@ -547,11 +542,6 @@ Source: <http://www.iso.org/iso/country_codes>
 		alpha_3_code="GRD"
 		numeric_code="308"
 		name="Grenada" />
-	<iso_3166_entry
-		alpha_2_code="GP"
-		alpha_3_code="GLP"
-		numeric_code="312"
-		name="Guadeloupe" />
 	<iso_3166_entry
 		alpha_2_code="GU"
 		alpha_3_code="GUM"
@@ -841,11 +831,6 @@ Source: <http://www.iso.org/iso/country_codes>
 		name="Marshall Islands"
 		official_name="Republic of the Marshall Islands" />
 	<iso_3166_entry
-		alpha_2_code="MQ"
-		alpha_3_code="MTQ"
-		numeric_code="474"
-		name="Martinique" />
-	<iso_3166_entry
 		alpha_2_code="MR"
 		alpha_3_code="MRT"
 		numeric_code="478"
@@ -857,11 +842,6 @@ Source: <http://www.iso.org/iso/country_codes>
 		numeric_code="480"
 		name="Mauritius"
 		official_name="Republic of Mauritius" />
-	<iso_3166_entry
-		alpha_2_code="YT"
-		alpha_3_code="MYT"
-		numeric_code="175"
-		name="Mayotte" />
 	<iso_3166_entry
 		alpha_2_code="MX"
 		alpha_3_code="MEX"
@@ -1077,11 +1057,6 @@ Source: <http://www.iso.org/iso/country_codes>
 		numeric_code="634"
 		name="Qatar"
 		official_name="State of Qatar" />
-	<iso_3166_entry
-		alpha_2_code="RE"
-		alpha_3_code="REU"
-		numeric_code="638"
-		name="Réunion" />
 	<iso_3166_entry
 		alpha_2_code="RO"
 		alpha_3_code="ROU"
@@ -1417,12 +1392,6 @@ Source: <http://www.iso.org/iso/country_codes>
 		numeric_code="092"
 		name="Virgin Islands, British"
 		official_name="British Virgin Islands" />
-	<iso_3166_entry
-		alpha_2_code="VI"
-		alpha_3_code="VIR"
-		numeric_code="850"
-		name="Virgin Islands, U.S."
-		official_name="Virgin Islands of the United States" />
 	<iso_3166_entry
 		alpha_2_code="WF"
 		alpha_3_code="WLF"

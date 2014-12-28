@@ -147,7 +147,7 @@ public class LaenderDerWeltActivity extends ListActivity implements OnItemSelect
 		int i = 0;
 		for (String neighboursCode : neighboursCodes) {
 			if (i > 0) {
-				result = result + ", ";
+				result = result + "; ";
 			}
 			XmlResourceParser xrpCountries = this.getResources().getXml(R.xml.iso_3166);
 			try {

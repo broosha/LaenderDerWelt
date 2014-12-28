@@ -12,7 +12,10 @@
         android:shadowDx="4.0"
         android:shadowDy="4.0"
         android:textSize="24sp"
-        android:text="@string/countries_overview_title_placeholder" />
+        android:layout_marginLeft="5dp"
+        android:text="@string/countries_overview_title_placeholder" 
+        android:textStyle="bold" 
+        android:textColor="#0B0B61"/>
 
 	<ImageView
         android:id="@+id/imageViewIcon"
@@ -21,58 +24,130 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_marginTop="4dp"
-        android:layout_marginRight="4dp"
+        android:layout_marginRight="14dp"
         android:src="@drawable/ic_launcher"
         android:layout_below="@+id/textViewCountriesOverviewTitle" />
     
+	
    	<TextView
-        android:id="@+id/textViewCapital"
+        android:id="@+id/textViewCapitalTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/imageViewIcon"
         android:layout_below="@+id/textViewCountriesOverviewTitle"
         android:textSize="17sp"
+        android:text="@string/capital" 
+        android:textStyle="bold" />
+   	
+   	<TextView
+        android:id="@+id/textViewCapital"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/textViewCapitalTitle"
+        android:layout_below="@+id/textViewCountriesOverviewTitle"
+        android:textSize="17sp"
+        android:layout_marginLeft="5dp"
         android:text="@string/capital_placeholder" />
 
-	<TextView
-        android:id="@+id/textViewNativeName"
+   	
+   	<TextView
+        android:id="@+id/textViewNativeNameTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/imageViewIcon"
         android:layout_below="@+id/textViewCapital"
         android:textSize="17sp"
+        android:text="@string/nativeName" 
+        android:textStyle="bold" />
+   	
+	<TextView
+        android:id="@+id/textViewNativeName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/textViewNativeNameTitle"
+        android:layout_below="@+id/textViewCapital"
+        android:textSize="17sp"
+        android:layout_marginLeft="5dp"
         android:text="@string/nativeName_placeholder" />
 	
+	
     <TextView
-        android:id="@+id/textViewArea"
+        android:id="@+id/textViewAreaTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/imageViewIcon"
         android:layout_below="@+id/textViewNativeName"
         android:textSize="17sp"
+        android:text="@string/area" 
+        android:textStyle="bold" />
+    
+    <TextView
+        android:id="@+id/textViewArea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/textViewAreaTitle"
+        android:layout_below="@+id/textViewNativeName"
+        android:textSize="17sp"
+        android:layout_marginLeft="5dp"
         android:text="@string/area_placeholder" />
 
+    
     <TextView
-        android:id="@+id/textViewPopulation"
+        android:id="@+id/textViewPopulationTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/imageViewIcon"
         android:layout_below="@+id/textViewArea"
         android:textSize="17sp"
+        android:text="@string/population" 
+        android:textStyle="bold" />
+    
+    <TextView
+        android:id="@+id/textViewPopulation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/textViewPopulationTitle"
+        android:layout_below="@+id/textViewArea"
+        android:textSize="17sp"
+        android:layout_marginLeft="5dp"
         android:text="@string/population_placeholder" />
 
+    
     <TextView
-        android:id="@+id/textViewContinent"
+        android:id="@+id/textViewContinentTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/imageViewIcon"
         android:layout_below="@+id/textViewPopulation"
         android:textSize="17sp"
+        android:text="@string/continent" 
+        android:paddingBottom="7dp"
+        android:textStyle="bold" />
+    
+    <TextView
+        android:id="@+id/textViewContinent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/textViewContinentTitle"
+        android:layout_below="@+id/textViewPopulation"
+        android:textSize="17sp"
+        android:layout_marginLeft="5dp"
         android:text="@string/continent_placeholder" 
         android:paddingBottom="7dp" />
 	
+    
     <View style="@style/Divider"
         android:layout_below="@+id/textViewContinent" />
+    
+    <TextView
+        android:id="@+id/textViewCurrenciesTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewContinent"
+        android:textSize="17sp"
+        android:layout_marginLeft="5dp"
+        android:text="@string/currencies" 
+        android:textStyle="bold" />
     
     <TextView
         android:id="@+id/textViewCurrencies"
@@ -83,25 +158,60 @@
         android:textSize="17sp"
         android:text="@string/currencies_placeholder" />
     
+    
+    <TextView
+        android:id="@+id/textViewCallingCodesTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewCurrencies"
+        android:textSize="17sp"
+        android:layout_marginLeft="5dp"
+        android:text="@string/callingCodes" 
+        android:textStyle="bold" />
+    
     <TextView
         android:id="@+id/textViewCallingCodes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/imageViewIcon"
+        android:layout_marginLeft="7dp"
         android:layout_below="@+id/textViewCurrencies"
         android:textSize="17sp"
         android:text="@string/callingCodes_placeholder" />
+    
+    
+    <TextView
+        android:id="@+id/textViewTopLevelDomainsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewCallingCodes"
+        android:textSize="17sp"
+        android:layout_marginLeft="5dp"
+        android:text="@string/topLevelDomains" 
+        android:textStyle="bold" />
     
     <TextView
         android:id="@+id/textViewTopLevelDomains"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/imageViewIcon"
+        android:layout_marginLeft="7dp"
         android:layout_below="@+id/textViewCallingCodes"
         android:textSize="17sp"
         android:text="@string/topLevelDomains_placeholder" />
     
-    <TextView
+    
+     <TextView
+        android:id="@+id/textViewTimezonesTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewTopLevelDomains"
+        android:textSize="17sp"
+        android:layout_marginLeft="5dp"
+        android:text="@string/timezones" 
+        android:textStyle="bold" />
+     
+     <TextView
         android:id="@+id/textViewTimezones"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -109,6 +219,18 @@
         android:layout_below="@+id/textViewTopLevelDomains"
         android:textSize="17sp"
         android:text="@string/timezones_placeholder" />
+    
+     
+    <TextView
+        android:id="@+id/textViewGiniIndexTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewTimezones"
+        android:textSize="17sp"
+        android:layout_marginLeft="5dp"
+        android:text="@string/giniIndex" 
+        android:paddingBottom="7dp" 
+        android:textStyle="bold" />
     
     <TextView
         android:id="@+id/textViewGiniIndex"
@@ -120,8 +242,22 @@
         android:text="@string/giniIndex_placeholder" 
         android:paddingBottom="7dp" />
     
+    
     <View style="@style/Divider"
         android:layout_below="@+id/textViewGiniIndex" />
+    
+    
+    <TextView
+        android:id="@+id/textViewLanguagesTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewGiniIndex"
+        android:textSize="17sp"
+        android:text="@string/languages" 
+        android:paddingBottom="7dp" 
+        android:paddingTop ="5dp" 
+        android:layout_marginLeft="5dp" 
+        android:textStyle="bold" />
     
     <TextView
         android:id="@+id/textViewLanguages"
@@ -134,8 +270,22 @@
         android:paddingBottom="7dp" 
         android:paddingTop ="5dp" />
     
+    
     <View style="@style/Divider"
         android:layout_below="@+id/textViewLanguages" />
+    
+    
+    <TextView
+        android:id="@+id/textViewNeighboursTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewLanguages"
+        android:textSize="17sp"
+        android:text="@string/neighbours" 
+        android:paddingBottom="7dp" 
+        android:paddingTop ="5dp" 
+        android:layout_marginLeft="5dp" 
+        android:textStyle="bold"/>
     
     <TextView
         android:id="@+id/textViewNeighbours"
@@ -150,8 +300,10 @@
         android:onClick="onClick"                
        	android:clickable="true" />
     
+    
     <View style="@style/Divider"
         android:layout_below="@+id/textViewNeighbours" />
+    
     
     <TextView
         android:id="@+id/textViewRestCountriesApi"

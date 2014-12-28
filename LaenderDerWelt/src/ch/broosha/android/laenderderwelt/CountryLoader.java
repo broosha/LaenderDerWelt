@@ -182,20 +182,26 @@ public class CountryLoader {
 		    String callingCodes = "";
 		    if (callingCodesJson != null && callingCodesJson.length() > 0) {
 		    	for(int i = 0; i < callingCodesJson.length(); i++) {
-		    		if (i > 0) {
-		    			callingCodes = callingCodes + ", ";
+		    		if (callingCodesJson.getString(i).trim().length() > 0) {
+			    		if (i > 0) {
+			    			callingCodes = callingCodes + ", ";
+			    		}
+			    		callingCodes = callingCodes + "+" + callingCodesJson.getString(i);
 		    		}
-		    		callingCodes = callingCodes + "+" + callingCodesJson.getString(i);
 		    	}
 		    }
-		    land.setCallingCodes(callingCodes);
+		    if (callingCodes.trim().length() > 0) {
+		    	land.setCallingCodes(callingCodes);
+		    } else {
+		    	land.setCallingCodes("-");
+		    }
 		    
 		    String languages = "";
 		    if (languagesJson != null && languagesJson.length() > 0) {
 		    	if (languagesJson.length() == 1) {
-		    		languages = "Language: ";
+		    		// do nothing
 		    	} else {
-		    		languages = languagesJson.length() + " Languages: " + System.getProperty("line.separator") ;
+		    		languages = languagesJson.length() + " languages" + System.getProperty("line.separator") ;
 		    	}
 		    	for(int i = 0; i < languagesJson.length(); i++) {
 		    		if (i > 0) {
@@ -210,9 +216,9 @@ public class CountryLoader {
 		    ArrayList<String> neighboursList = new ArrayList<String>();
 		    if (bordersJson != null && bordersJson.length() > 0) {
 		    	if (bordersJson.length() == 1) {
-		    		neighbours = "Neighbour: ";
+		    		// do nothing
 		    	} else {
-		    		neighbours = bordersJson.length() + " Neighbours: " + System.getProperty("line.separator") ;
+		    		neighbours = bordersJson.length() + " neighbours" + System.getProperty("line.separator") ;
 		    	}
 		    	for(int i = 0; i < bordersJson.length(); i++) {
 		    		if (i > 0) {
@@ -228,9 +234,9 @@ public class CountryLoader {
 		    String timezones = "";
 		    if (timezonesJson != null && timezonesJson.length() > 0) {
 		    	if (timezonesJson.length() == 1) {
-		    		timezones = "Timezone: " + timezonesJson.getString(0);
+		    		timezones = timezonesJson.getString(0);
 		    	} else if (timezonesJson.length() == 2) {
-		    		timezones = timezonesJson.length() + " Timezones: " + timezonesJson.getString(0) + " - " + timezonesJson.getString(1);
+		    		timezones = timezonesJson.length() + " Timezones - " + timezonesJson.getString(0) + " - " + timezonesJson.getString(1);
 		    	} else {
 		    		timezones = timezonesJson.length() + " Timezones between " + timezonesJson.getString(0) + " and " + timezonesJson.getString(timezonesJson.length()-1);
 		    	}
@@ -252,7 +258,7 @@ public class CountryLoader {
 	 * @return
 	 */
 	public String getCurrencyText (String currencyCode) {
-		String result = "-";
+		String result = currencyCode.toUpperCase();
 		if (currencyCode != null && currencyCode.trim().length() > 0) {
 			XmlResourceParser xrpCurrencies = this.context.getResources().getXml(R.xml.iso_4217);
 			try {

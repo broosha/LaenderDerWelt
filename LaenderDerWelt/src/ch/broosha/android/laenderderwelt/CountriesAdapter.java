@@ -82,57 +82,63 @@ public class CountriesAdapter extends BaseAdapter {
 		
 		textViewCountryOverviewTitle.setText(country.getName().toUpperCase(Locale.ENGLISH) + " (" + country.getDescription().toUpperCase() + ")");
 		if (!"unknown".equals(country.getCapital())) {
-			textViewCapital.setText("Capital: " + country.getCapital().toUpperCase(Locale.ENGLISH));
+			textViewCapital.setText(country.getCapital().toUpperCase(Locale.ENGLISH));
 		} else {
-			textViewCapital.setText("Capital: -");
+			textViewCapital.setText("-");
 		}
 		
 		if (country.getPopulation() != null && country.getPopulation().trim().length() > 0 && !"unknown".equals(country.getPopulation()) && Long.valueOf(country.getPopulation()) >  0) {
-			textViewPopulation.setText("Population: " + DecimalFormat.getInstance(new Locale("de", "CH")).format(Long.valueOf(country.getPopulation())));
+			textViewPopulation.setText(DecimalFormat.getInstance(new Locale("de", "CH")).format(Long.valueOf(country.getPopulation())));
 		} else {
-			textViewPopulation.setText("Population: -");
+			textViewPopulation.setText("-");
 		}
 		
 		if (country.getArea() != null && country.getArea().trim().length() > 0 && !"unknown".equals(country.getArea()) && Double.valueOf(country.getArea()) >  0) {
-			textViewArea.setText("Area: " + DecimalFormat.getInstance(new Locale("de", "CH")).format(Double.valueOf(country.getArea())) + " km");
+			textViewArea.setText(DecimalFormat.getInstance(new Locale("de", "CH")).format(Double.valueOf(country.getArea())) + " km");
 		} else {
-			textViewArea.setText("Area: -");
+			textViewArea.setText("-");
 		}
 		
 		if (country.getContinent() != null && country.getContinent().trim().length() > 0) {
-			textViewContinent.setText("Region: " + country.getContinent());
+			textViewContinent.setText(country.getContinent());
 		}  else {
-			textViewNativeName.setText("Region: -");
+			textViewNativeName.setText("-");
 		}
 		
 		if (country.getNativeName() != null && country.getNativeName().trim().length() > 0) {
-			textViewNativeName.setText("Origin name: " + country.getNativeName());
+			textViewNativeName.setText(country.getNativeName());
 		} else {
-			textViewNativeName.setText("Origin name: -");
+			textViewNativeName.setText("-");
 		}
 		
 		if (country.getCurrencies() != null && country.getCurrencies().trim().length() > 0) {
-			textViewCurrencies.setText("Currency: " + country.getCurrencies());
+			textViewCurrencies.setText(country.getCurrencies());
 		} else {
-			textViewCurrencies.setText("Currency: -");
+			textViewCurrencies.setText("-");
 		}
 		
 		if (country.getCallingCodes() != null && country.getCallingCodes().trim().length() > 0) {
-			textViewCallingCodes.setText("Calling code: " + country.getCallingCodes());
+			textViewCallingCodes.setText(country.getCallingCodes());
 		} else {
-			textViewCallingCodes.setText("Calling code: -");
+			textViewCallingCodes.setText("-");
 		}
 		
 		if (country.getTopLevelDomains() != null && country.getTopLevelDomains().trim().length() > 0) {
-			textViewTopLevelDomains.setText("Top level domain: " + country.getTopLevelDomains());
+			textViewTopLevelDomains.setText(country.getTopLevelDomains());
 		} else {
-			textViewTopLevelDomains.setText("Top level domain: -");
+			textViewTopLevelDomains.setText("-");
+		}
+		
+		if (country.getTimezones() != null && country.getTimezones().trim().length() > 0) {
+			textViewTimezones.setText(country.getTimezones());
+		} else {
+			textViewTimezones.setText("-");
 		}
 		
 		if (country.getGiniIndex() != null && country.getGiniIndex().trim().length() > 0 && !"null".equals(country.getGiniIndex())) {
-			textViewGiniIndex.setText("GINI Index: " + country.getGiniIndex());
+			textViewGiniIndex.setText(country.getGiniIndex());
 		} else {
-			textViewGiniIndex.setText("GINI Index: -");
+			textViewGiniIndex.setText("-");
 		}
 		
 		if (country.getLanguages() != null && country.getLanguages().trim().length() > 0) {
@@ -149,13 +155,7 @@ public class CountriesAdapter extends BaseAdapter {
 		if (country.getNeighboursList() != null && country.getNeighboursList().size() > 0) {
 			this.setNeighboursList(country.getNeighboursList());
 		}
-		
-		if (country.getTimezones() != null && country.getTimezones().trim().length() > 0) {
-			textViewTimezones.setText(country.getTimezones());
-		} else {
-			textViewTimezones.setText("Timezones: -");
-		}
-		
+				
 		try {
 			String fileName = country.getDescription() + ".png";
 			InputStream is = this.context.getAssets().open(fileName);
