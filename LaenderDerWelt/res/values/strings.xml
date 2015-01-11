@@ -48,6 +48,7 @@
     <string name="flag_description">Flag of the choosed country</string>
     <string name="api_description">Icon of REST Countries API</string>
 	<string name="restcountries_all_countries">http://restcountries.eu/rest/v1/all</string>
-	<string name="restcountries_alpha_code">http://restcountries.eu/rest/v1/alpha/</string>
+	<string name="restcountries_alpha_code">http://restcountries.eu/rest/v1/alpha/%1$s</string>
 	<string name="restCountriesApi_placeholder">Powered by <a href="http://restcountries.eu/">REST Countries</a> API</string>
+	<string name="google_api_geocode">http://maps.googleapis.com/maps/api/geocode/json?latlng=%1$s,%2$s&amp;sensor=false</string>
  </resources>

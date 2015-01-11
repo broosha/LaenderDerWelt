@@ -95,7 +95,7 @@ public class CountryLoader {
 		final NetworkUtility nwu = new NetworkUtility(handler);
 		
 //		Uri uri = Uri.parse(context.getResources().getString(R.string.ham_countries_api_uri, countryDescription));
-		Uri uri = Uri.parse(context.getResources().getString(R.string.restcountries_alpha_code) + countryDescription.toLowerCase());
+		Uri uri = Uri.parse(context.getResources().getString(R.string.restcountries_alpha_code, countryDescription.toLowerCase()));
 		Country country = parseRestCountriesJson(nwu.loadText(uri));
 		result.add(country);
 		return result;
