@@ -1660,4 +1660,9 @@ Source: <http://www.iso.org/iso/country_codes>
 		numeric_code="180"
 		date_withdrawn="1997-07-14"
 		names="Zaire, Republic of" />
+	<iso_3166_entry
+		alpha_2_code="XK"
+		alpha_3_code="KOS"
+		numeric_code="377"
+		names="Republic of Kosovo" />
 </iso_3166_entries>
