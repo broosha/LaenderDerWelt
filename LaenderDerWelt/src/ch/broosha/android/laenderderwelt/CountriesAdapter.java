@@ -17,6 +17,7 @@ import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
@@ -32,6 +33,8 @@ public class CountriesAdapter extends BaseAdapter {
 	
 	private ArrayList<String> neighboursList;
 	   
+	int imageClickCounter = 0;
+	
 	
 	public CountriesAdapter(Context context, List<Country> countries) {
 		this.context = context;
@@ -166,6 +169,28 @@ public class CountriesAdapter extends BaseAdapter {
 		} catch (IOException e) {
 			e.printStackTrace(); 
 		}
+		
+		imageViewIcon.setOnClickListener(new OnClickListener() {
+			public void onClick(View view) {
+				imageClickCounter++;
+				if ((imageClickCounter % 2) == 1) {
+					view.setScaleX(view.getScaleX()*2);
+					view.setScaleY(view.getScaleY()*2);
+					view.setLeft(view.getLeft()+60);
+					view.setRight(view.getRight()+60);
+					view.setTop(view.getTop()+40);
+					view.setBottom(view.getBottom()+40);
+					view.bringToFront();
+				} else {
+					view.setScaleX(view.getScaleX()/2);
+					view.setScaleY(view.getScaleY()/2);
+					view.setLeft(view.getLeft()-60);
+					view.setRight(view.getRight()-60);
+					view.setTop(view.getTop()+-40);
+					view.setBottom(view.getBottom()-40);
+				}
+			}
+		});
 		
 		try {
 			String apiIconName = "_restCountries.png";
