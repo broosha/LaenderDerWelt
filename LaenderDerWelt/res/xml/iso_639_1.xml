@@ -1,0 +1,559 @@
+<?xml-stylesheet type="text/xsl" href="../TM-XML_xsl/TM-XML_ISOCodePresentation.xsl"?>
+<ISOLanguageCode ISO="ISO 639-1998: Language Codes">
+<Language>
+	<LanguageCode>aa</LanguageCode>
+	<LanguageName xml:lang="en">Afar</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>ab</LanguageCode>
+	<LanguageName xml:lang="en">Abkhazian</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>af</LanguageCode>
+	<LanguageName xml:lang="en">Afrikaans</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>am</LanguageCode>
+	<LanguageName xml:lang="en">Amharic</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>ar</LanguageCode>
+	<LanguageName xml:lang="en">Arabic</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>as</LanguageCode>
+	<LanguageName xml:lang="en">Assamese</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>ay</LanguageCode>
+	<LanguageName xml:lang="en">Aymara</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>az</LanguageCode>
+	<LanguageName xml:lang="en">Azerbaijani</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>ba</LanguageCode>
+	<LanguageName xml:lang="en">Bashkir</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>be</LanguageCode>
+	<LanguageName xml:lang="en">Byelorussian</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>bg</LanguageCode>
+	<LanguageName xml:lang="en">Bulgarian</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>bh</LanguageCode>
+	<LanguageName xml:lang="en">Bihari</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>bi</LanguageCode>
+	<LanguageName xml:lang="en">Bislama</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>bn</LanguageCode>
+	<LanguageName xml:lang="en">Bengali; Bangla</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>bo</LanguageCode>
+	<LanguageName xml:lang="en">Tibetan</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>br</LanguageCode>
+	<LanguageName xml:lang="en">Breton</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>ca</LanguageCode>
+	<LanguageName xml:lang="en">Catalan</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>co</LanguageCode>
+	<LanguageName xml:lang="en">Corsican</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>cs</LanguageCode>
+	<LanguageName xml:lang="en">Czech</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>cy</LanguageCode>
+	<LanguageName xml:lang="en">Welsh</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>da</LanguageCode>
+	<LanguageName xml:lang="en">Danish</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>de</LanguageCode>
+	<LanguageName xml:lang="en">German</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>dz</LanguageCode>
+	<LanguageName xml:lang="en">Bhutani</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>el</LanguageCode>
+	<LanguageName xml:lang="en">Greek</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>en</LanguageCode>
+	<LanguageName xml:lang="en">English</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>eo</LanguageCode>
+	<LanguageName xml:lang="en">Esperanto</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>es</LanguageCode>
+	<LanguageName xml:lang="en">Spanish</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>et</LanguageCode>
+	<LanguageName xml:lang="en">Estonian</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>eu</LanguageCode>
+	<LanguageName xml:lang="en">Basque</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>fa</LanguageCode>
+	<LanguageName xml:lang="en">Persian</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>fi</LanguageCode>
+	<LanguageName xml:lang="en">Finnish</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>fj</LanguageCode>
+	<LanguageName xml:lang="en">Fiji</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>fo</LanguageCode>
+	<LanguageName xml:lang="en">Faroese</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>fr</LanguageCode>
+	<LanguageName xml:lang="en">French</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>fy</LanguageCode>
+	<LanguageName xml:lang="en">Frisian</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>ga</LanguageCode>
+	<LanguageName xml:lang="en">Irish</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>gd</LanguageCode>
+	<LanguageName xml:lang="en">Scots Gaelic</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>gl</LanguageCode>
+	<LanguageName xml:lang="en">Galician</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>gn</LanguageCode>
+	<LanguageName xml:lang="en">Guarani</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>gu</LanguageCode>
+	<LanguageName xml:lang="en">Gujarati</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>ha</LanguageCode>
+	<LanguageName xml:lang="en">Hausa</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>he</LanguageCode>
+	<LanguageName xml:lang="en">Hebrew</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>hi</LanguageCode>
+	<LanguageName xml:lang="en">Hindi</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>hr</LanguageCode>
+	<LanguageName xml:lang="en">Croatian</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>hu</LanguageCode>
+	<LanguageName xml:lang="en">Hungarian</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>hy</LanguageCode>
+	<LanguageName xml:lang="en">Armenian</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>ia</LanguageCode>
+	<LanguageName xml:lang="en">Interlingua</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>id</LanguageCode>
+	<LanguageName xml:lang="en">Indonesian</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>ie</LanguageCode>
+	<LanguageName xml:lang="en">Interlingue</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>ik</LanguageCode>
+	<LanguageName xml:lang="en">Inupiak</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>is</LanguageCode>
+	<LanguageName xml:lang="en">Icelandic</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>it</LanguageCode>
+	<LanguageName xml:lang="en">Italian</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>iu</LanguageCode>
+	<LanguageName xml:lang="en">Inuktitut</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>ja</LanguageCode>
+	<LanguageName xml:lang="en">Japanese</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>jw</LanguageCode>
+	<LanguageName xml:lang="en">Javanese</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>ka</LanguageCode>
+	<LanguageName xml:lang="en">Georgian</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>kk</LanguageCode>
+	<LanguageName xml:lang="en">Kazakh</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>kl</LanguageCode>
+	<LanguageName xml:lang="en">Greenlandic</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>km</LanguageCode>
+	<LanguageName xml:lang="en">Cambodian</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>kn</LanguageCode>
+	<LanguageName xml:lang="en">Kannada</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>ko</LanguageCode>
+	<LanguageName xml:lang="en">Korean</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>ks</LanguageCode>
+	<LanguageName xml:lang="en">Kashmiri</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>ku</LanguageCode>
+	<LanguageName xml:lang="en">Kurdish</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>ky</LanguageCode>
+	<LanguageName xml:lang="en">Kirghiz</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>la</LanguageCode>
+	<LanguageName xml:lang="en">Latin</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>ln</LanguageCode>
+	<LanguageName xml:lang="en">Lingala</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>lo</LanguageCode>
+	<LanguageName xml:lang="en">Laothian</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>lt</LanguageCode>
+	<LanguageName xml:lang="en">Lithuanian</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>lv</LanguageCode>
+	<LanguageName xml:lang="en">Latvian; Lettish</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>mg</LanguageCode>
+	<LanguageName xml:lang="en">Malagasy</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>mi</LanguageCode>
+	<LanguageName xml:lang="en">Maori</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>mk</LanguageCode>
+	<LanguageName xml:lang="en">Macedonian</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>ml</LanguageCode>
+	<LanguageName xml:lang="en">Malayalam</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>mn</LanguageCode>
+	<LanguageName xml:lang="en">Mongolian</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>mo</LanguageCode>
+	<LanguageName xml:lang="en">Moldavian</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>mr</LanguageCode>
+	<LanguageName xml:lang="en">Marathi</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>ms</LanguageCode>
+	<LanguageName xml:lang="en">Malay</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>mt</LanguageCode>
+	<LanguageName xml:lang="en">Maltese</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>my</LanguageCode>
+	<LanguageName xml:lang="en">Burmese</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>na</LanguageCode>
+	<LanguageName xml:lang="en">Nauru</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>ne</LanguageCode>
+	<LanguageName xml:lang="en">Nepali</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>nl</LanguageCode>
+	<LanguageName xml:lang="en">Dutch</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>no</LanguageCode>
+	<LanguageName xml:lang="en">Norwegian</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>oc</LanguageCode>
+	<LanguageName xml:lang="en">Occitan</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>om</LanguageCode>
+	<LanguageName xml:lang="en">(Afan) Oromo</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>or</LanguageCode>
+	<LanguageName xml:lang="en">Oriya</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>pa</LanguageCode>
+	<LanguageName xml:lang="en">Punjabi</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>pl</LanguageCode>
+	<LanguageName xml:lang="en">Polish</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>ps</LanguageCode>
+	<LanguageName xml:lang="en">Pashto, Pushto</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>pt</LanguageCode>
+	<LanguageName xml:lang="en">Portuguese</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>qu</LanguageCode>
+	<LanguageName xml:lang="en">Quechua</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>rm</LanguageCode>
+	<LanguageName xml:lang="en">Rhaeto-Romance</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>rn</LanguageCode>
+	<LanguageName xml:lang="en">Kirundi</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>ro</LanguageCode>
+	<LanguageName xml:lang="en">Romanian</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>ru</LanguageCode>
+	<LanguageName xml:lang="en">Russian</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>rw</LanguageCode>
+	<LanguageName xml:lang="en">Kinyarwanda</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>sa</LanguageCode>
+	<LanguageName xml:lang="en">Sanskrit</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>sd</LanguageCode>
+	<LanguageName xml:lang="en">Sindhi</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>sg</LanguageCode>
+	<LanguageName xml:lang="en">Sangho</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>sh</LanguageCode>
+	<LanguageName xml:lang="en">Serbo-Croatian</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>si</LanguageCode>
+	<LanguageName xml:lang="en">Singhalese</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>sk</LanguageCode>
+	<LanguageName xml:lang="en">Slovak</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>sl</LanguageCode>
+	<LanguageName xml:lang="en">Slovenian</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>sm</LanguageCode>
+	<LanguageName xml:lang="en">Samoan</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>sn</LanguageCode>
+	<LanguageName xml:lang="en">Shona</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>so</LanguageCode>
+	<LanguageName xml:lang="en">Somali</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>sq</LanguageCode>
+	<LanguageName xml:lang="en">Albanian</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>sr</LanguageCode>
+	<LanguageName xml:lang="en">Serbian</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>ss</LanguageCode>
+	<LanguageName xml:lang="en">Siswati</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>st</LanguageCode>
+	<LanguageName xml:lang="en">Sesotho</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>su</LanguageCode>
+	<LanguageName xml:lang="en">Sundanese</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>sv</LanguageCode>
+	<LanguageName xml:lang="en">Swedish</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>sw</LanguageCode>
+	<LanguageName xml:lang="en">Swahili</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>ta</LanguageCode>
+	<LanguageName xml:lang="en">Tamil</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>te</LanguageCode>
+	<LanguageName xml:lang="en">Telugu</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>tg</LanguageCode>
+	<LanguageName xml:lang="en">Tajik</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>th</LanguageCode>
+	<LanguageName xml:lang="en">Thai</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>ti</LanguageCode>
+	<LanguageName xml:lang="en">Tigrinya</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>tk</LanguageCode>
+	<LanguageName xml:lang="en">Turkmen</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>tl</LanguageCode>
+	<LanguageName xml:lang="en">Tagalog</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>tn</LanguageCode>
+	<LanguageName xml:lang="en">Setswana</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>to</LanguageCode>
+	<LanguageName xml:lang="en">Tonga</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>tr</LanguageCode>
+	<LanguageName xml:lang="en">Turkish</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>ts</LanguageCode>
+	<LanguageName xml:lang="en">Tsonga</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>tt</LanguageCode>
+	<LanguageName xml:lang="en">Tatar</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>tw</LanguageCode>
+	<LanguageName xml:lang="en">Twi</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>ug</LanguageCode>
+	<LanguageName xml:lang="en">Uigur</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>uk</LanguageCode>
+	<LanguageName xml:lang="en">Ukrainian</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>ur</LanguageCode>
+	<LanguageName xml:lang="en">Urdu</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>uz</LanguageCode>
+	<LanguageName xml:lang="en">Uzbek</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>vi</LanguageCode>
+	<LanguageName xml:lang="en">Vietnamese</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>vo</LanguageCode>
+	<LanguageName xml:lang="en">Volapuk</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>wo</LanguageCode>
+	<LanguageName xml:lang="en">Wolof</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>xh</LanguageCode>
+	<LanguageName xml:lang="en">Xhosa</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>yi</LanguageCode>
+	<LanguageName xml:lang="en">Yiddish</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>yo</LanguageCode>
+	<LanguageName xml:lang="en">Yoruba</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>za</LanguageCode>
+	<LanguageName xml:lang="en">Zhuang</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>zh</LanguageCode>
+	<LanguageName xml:lang="en">Chinese</LanguageName>
+</Language>
+<Language>
+	<LanguageCode>zu</LanguageCode>
+	<LanguageName xml:lang="en">Zulu</LanguageName>
+</Language>
+</ISOLanguageCode>
